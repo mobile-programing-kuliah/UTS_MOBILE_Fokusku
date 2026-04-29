@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palet Warna Fokusku (Earth Tone) -->
+    <color name="dark_green">#40513B</color>
+    <color name="primary_green">#609966</color>
+    <color name="soft_green">#9DC08B</color>
+    <color name="cream_bg">#EDF1D6</color>
+
+<!--     Warna Tambahan -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="error_red">#B00020</color>
+    <color name="smooth_dark_bg">#1A1C19</color>
+    <color name="smooth_dark_surface">#222521</color>
+
+</resources>

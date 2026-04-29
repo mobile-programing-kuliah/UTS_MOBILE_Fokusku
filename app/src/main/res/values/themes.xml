@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Fokusku" parent="Theme.Material3Expressive.Light.NoActionBar">
+        <!-- Warna Utama Aplikasi -->
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Warna Latar Belakang -->
+        <item name="android:windowBackground">@color/cream_bg</item>
+        <item name="colorSurface">@color/cream_bg</item>
+
+        <!-- Warna Status Bar -->
+        <item name="android:statusBarColor">@color/dark_green</item>
+
+        <!-- Warna Teks Umum -->
+        <item name="colorOnSurface">@color/dark_green</item>
+    </style>
+
+    <style name="Theme.Fokusku" parent="Base.Theme.Fokusku" />
+</resources>

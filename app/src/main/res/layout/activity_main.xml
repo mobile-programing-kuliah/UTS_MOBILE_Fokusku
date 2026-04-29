@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream_bg"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnStartFocus">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="28dp">
+
+            <!-- Header Section -->
+            <LinearLayout
+                android:id="@+id/headerGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_title"
+                    android:textColor="@color/dark_green"
+                    android:textSize="32sp"
+                    android:fontFamily="sans-serif-black"
+                    android:lineSpacingExtra="4sp" />
+
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/welcome_subtitle"
+                    android:textColor="@color/dark_green"
+                    android:alpha="0.7"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+
+            <!-- Timer Selection Label -->
+            <TextView
+                android:id="@+id/tvLabelDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/label_duration"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.15"
+                android:textStyle="bold"
+                android:textColor="@color/primary_green"
+                app:layout_constraintTop_toBottomOf="@id/headerGroup"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Duration Grid (2x2 Cards) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card15"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelDuration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/card25"
+                app:layout_constraintHorizontal_chainStyle="spread">
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="15m"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card25"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/primary_green"
+                app:layout_constraintTop_toTopOf="@id/card15"
+                app:layout_constraintStart_toEndOf="@id/card15"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/tv25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="25m"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card30"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/card15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardCustom">
+                <TextView
+                    android:id="@+id/tv30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="30m"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardCustom"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/card30"
+                app:layout_constraintStart_toEndOf="@id/card30"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/tvCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Custom"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Session Target Label -->
+            <TextView
+                android:id="@+id/tvLabelSessions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/label_sessions"
+                android:textSize="13sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.15"
+                android:textStyle="bold"
+                android:textColor="@color/primary_green"
+                app:layout_constraintTop_toBottomOf="@id/card30"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Session Row (1x4 Cards) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSession1"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelSessions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardSession2"
+                app:layout_constraintHorizontal_chainStyle="spread">
+                <TextView
+                    android:id="@+id/tvSession1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSession2"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cardSession1"
+                app:layout_constraintStart_toEndOf="@id/cardSession1"
+                app:layout_constraintEnd_toStartOf="@+id/cardSession4">
+                <TextView
+                    android:id="@+id/tvSession2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSession4"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginHorizontal="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/primary_green"
+                app:layout_constraintTop_toTopOf="@id/cardSession1"
+                app:layout_constraintStart_toEndOf="@id/cardSession2"
+                app:layout_constraintEnd_toStartOf="@+id/cardSessionEdit">
+                <TextView
+                    android:id="@+id/tvSession4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="4"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSessionEdit"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="4dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/soft_green"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cardSession1"
+                app:layout_constraintStart_toEndOf="@id/cardSession4"
+                app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                    android:id="@+id/tvSessionEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/btn_edit"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_green" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Ringkasan Rencana -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBreakInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/soft_green"
+                app:contentPadding="20dp"
+                app:layout_constraintTop_toBottomOf="@id/cardSession1"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvBreakTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_summary"
+                        android:textColor="@color/dark_green"
+                        android:textAllCaps="true"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.1"
+                        android:fontFamily="sans-serif-black" />
+
+                    <TextView
+                        android:id="@+id/tvBreakSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/summary_detail"
+                        android:textColor="@color/dark_green"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="4dp"
+                        android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Start Button (Sticky Bottom) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartFocus"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_margin="28dp"
+        android:text="@string/btn_start_focus"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/dark_green"
+        app:cornerRadius="28dp"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Fokusku</string>
+
+    <!-- Halaman Utama (MainActivity) -->
+    <string name="welcome_title">Selamat Datang di Fokusku</string>
+    <string name="welcome_subtitle">Pilih sesi belajarmu sekarang</string>
+    <string name="btn_start_focus">Mulai Fokus</string>
+    <string name="label_duration">Durasi per Sesi</string>
+    <string name="label_sessions">Target Jumlah Sesi</string>
+    <string name="label_summary">Ringkasan Rencana</string>
+    <string name="summary_detail">• Total Fokus: 100 menit\n• Istirahat: 5m (setiap sesi)\n• Long break: 30m (setelah sesi ke-4)</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_custom">Custom</string>
+
+    <!-- Halaman Timer (TimerActivity) -->
+    <string name="timer_label">Sedang Fokus</string>
+    <string name="session_progress_template">Sesi %1$d dari %2$d</string>
+    <string name="placeholder_timer">25:00</string>
+    <string name="btn_finish">Selesai Belajar</string>
+    <string name="btn_cancel">Batalkan</string>
+    <string name="motivational_quote">“Satu langkah kecil lebih baik daripada tidak melangkah sama sekali.”</string>
+
+    <!-- Halaman Istirahat (BreakActivity & LongBreakActivity) -->
+    <string name="break_label">Istirahat Sejenak</string>
+    <string name="long_break_label">Istirahat Panjang</string>
+    <string name="placeholder_break_timer">05:00</string>
+    <string name="placeholder_long_break_timer">30:00</string>
+    <string name="btn_back_to_focus">Kembali Fokus</string>
+    <string name="btn_skip_break">Lewati Istirahat</string>
+    <string name="break_quote">“Ambil napas dalam-dalam dan regangkan tubuhmu sejenak.”</string>
+    <string name="long_break_quote">“Luar biasa! Kamu sudah menyelesaikan satu putaran penuh. Nikmati istirahat panjangmu.”</string>
+
+    <!-- Halaman Hasil (ResultActivity) -->
+    <string name="congrats_title">Luar Biasa!</string>
+    <string name="congrats_message">Kamu telah menyelesaikan sesi fokus dengan baik.</string>
+    <string name="label_minutes_focus">Menit Fokus</string>
+    <string name="label_sessions_completed">Sesi Selesai</string>
+    <string name="encouragement_message">Teruslah konsisten untuk hasil yang lebih maksimal!</string>
+    <string name="closing_rest_message">Istirahatlah sejenak untuk menyegarkan pikiranmu kembali.</string>
+    <string name="btn_back_home">Ke Beranda</string>
+</resources>
