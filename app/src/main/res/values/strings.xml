@@ -38,4 +38,17 @@
     <string name="encouragement_message">Teruslah konsisten untuk hasil yang lebih maksimal!</string>
     <string name="closing_rest_message">Istirahatlah sejenak untuk menyegarkan pikiranmu kembali.</string>
     <string name="btn_back_home">Ke Beranda</string>
+
+    <!-- Halaman Riwayat (HistoryActivity) -->
+    <string name="history_title">Riwayat Fokus</string>
+    <string name="history_empty">Belum ada riwayat sesi.</string>
+    <string name="session_detail_template">Sesi %1$d • %2$d Menit</string>
+
+    <!-- Notification Strings -->
+    <string name="notif_title">Fokusku</string>
+    <string name="notif_remaining">Sisa waktu: %1$s</string>
+    <string name="notif_timer_started">Timer dimulai...</string>
+    <string name="notif_timer_paused">Timer Dijeda</string>
+    <string name="btn_pause">JEDA SESI</string>
+    <string name="btn_resume">LANJUTKAN</string>
 </resources>

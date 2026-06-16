@@ -2,9 +2,9 @@ package com.opheliachi.fokusku;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Objects;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private MaterialCardView cardSession1, cardSession2, cardSession4, cardSessionEdit;
     private TextView tvSession1, tvSession2, tvSession4, tvSessionEdit;
+
+    private int selectedDuration = 25; // Default 25 menit
+    private int selectedSessions = 4; // Default 4 sesi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,13 @@ public class MainActivity extends AppCompatActivity {
         Button btnStartFocus = findViewById(R.id.btnStartFocus);
         btnStartFocus.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TimerActivity.class);
+            intent.putExtra("DURATION_MINUTES", selectedDuration);
+            intent.putExtra("TOTAL_SESSIONS", selectedSessions);
             startActivity(intent);
         });
+
+        // Tombol Riwayat
+        findViewById(R.id.btnHistory).setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HistoryActivity.class)));
     }
 
     private void initDurationViews() {
@@ -59,10 +67,22 @@ public class MainActivity extends AppCompatActivity {
         tv30 = findViewById(R.id.tv30);
         tvCustom = findViewById(R.id.tvCustom);
 
-        card15.setOnClickListener(v -> updateSelection(card15, tv15, "duration"));
-        card25.setOnClickListener(v -> updateSelection(card25, tv25, "duration"));
-        card30.setOnClickListener(v -> updateSelection(card30, tv30, "duration"));
-        cardCustom.setOnClickListener(v -> updateSelection(cardCustom, tvCustom, "duration"));
+        card15.setOnClickListener(v -> {
+            selectedDuration = 15;
+            updateSelection(card15, tv15, "duration");
+        });
+        card25.setOnClickListener(v -> {
+            selectedDuration = 25;
+            updateSelection(card25, tv25, "duration");
+        });
+        card30.setOnClickListener(v -> {
+            selectedDuration = 30;
+            updateSelection(card30, tv30, "duration");
+        });
+        cardCustom.setOnClickListener(v -> {
+            selectedDuration = 45; // Contoh custom
+            updateSelection(cardCustom, tvCustom, "duration");
+        });
     }
 
     private void initSessionViews() {
@@ -75,15 +95,27 @@ public class MainActivity extends AppCompatActivity {
         tvSession4 = findViewById(R.id.tvSession4);
         tvSessionEdit = findViewById(R.id.tvSessionEdit);
 
-        cardSession1.setOnClickListener(v -> updateSelection(cardSession1, tvSession1, "session"));
-        cardSession2.setOnClickListener(v -> updateSelection(cardSession2, tvSession2, "session"));
-        cardSession4.setOnClickListener(v -> updateSelection(cardSession4, tvSession4, "session"));
-        cardSessionEdit.setOnClickListener(v -> updateSelection(cardSessionEdit, tvSessionEdit, "session"));
+        cardSession1.setOnClickListener(v -> {
+            selectedSessions = 1;
+            updateSelection(cardSession1, tvSession1, "session");
+        });
+        cardSession2.setOnClickListener(v -> {
+            selectedSessions = 2;
+            updateSelection(cardSession2, tvSession2, "session");
+        });
+        cardSession4.setOnClickListener(v -> {
+            selectedSessions = 4;
+            updateSelection(cardSession4, tvSession4, "session");
+        });
+        cardSessionEdit.setOnClickListener(v -> {
+            selectedSessions = 8;
+            updateSelection(cardSessionEdit, tvSessionEdit, "session");
+        });
     }
 
     private void updateSelection(MaterialCardView selectedCard, TextView selectedTv, String type) {
         // Reset kelompok kartu yang sesuai
-        if (type.equals("duration")) {
+        if (Objects.equals(type, "duration")) {
             resetCard(card15, tv15);
             resetCard(card25, tv25);
             resetCard(card30, tv30);

@@ -56,34 +56,33 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- Circular Progress BACKGROUND (track penuh sebagai latar) -->
+                <!-- 1. BACKGROUND FLAT (Lingkaran halus di belakang) -->
                 <com.google.android.material.progressindicator.CircularProgressIndicator
-                    style="@style/Widget.Material3Expressive.CircularProgressIndicator.Wavy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:progress="100"
                     app:indicatorSize="280dp"
-                    app:trackThickness="8dp"
+                    app:trackThickness="12dp"
                     app:indicatorColor="@color/soft_green"
                     app:trackColor="@color/cream_bg"
-                    app:trackCornerRadius="4dp"
-                    app:wavelength="40dp"
-                    app:waveAmplitude="5dp" />
+                    app:trackCornerRadius="6dp" />
 
-                <!-- Circular Progress ACTIVE (WAVY IMPLEMENTATION) -->
+                <!-- 2. ACTIVE WAVY (Bar bergelombang yang bergerak) -->
                 <com.google.android.material.progressindicator.CircularProgressIndicator
                     android:id="@+id/timerProgress"
                     style="@style/Widget.Material3Expressive.CircularProgressIndicator.Wavy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:progress="70"
+                    android:progress="700"
+                    android:max="1000"
                     app:indicatorSize="280dp"
-                    app:trackThickness="8dp"
+                    app:trackThickness="12dp"
                     app:indicatorColor="@color/primary_green"
                     app:trackColor="@android:color/transparent"
-                    app:trackCornerRadius="4dp"
-                    app:wavelength="40dp"
-                    app:waveAmplitude="5dp" />
+                    app:trackCornerRadius="6dp"
+                    app:wavelength="30dp"
+                    app:waveAmplitude="6dp"
+                    app:waveSpeed="10dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
